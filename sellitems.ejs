@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url("https://static.vecteezy.com/system/resources/previews/006/852/804/original/abstract-blue-background-simple-design-for-your-website-free-vector.jpg");
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: whitesmoke;
+            background-size: auto;
+            height: auto;
+
+
+        }
+
+        #formheading {
+            margin-top: 44px;
+        }
+
+        #firstpara {
+            font-size: 28px;
+
+        }
+
+        .sellform {
+            border: 3px outset whitesmoke;
+            padding: 6px;
+
+        }
+
+        #formcontainer {
+            margin-bottom: 10px;
+        }
+
+        .boxes {
+            margin: 5px;
+            width: 210px;
+        }
+
+        .radio {
+            margin: 3px;
+        }
+
+        #productpara {
+            margin: 2px;
+        }
+
+        .button {
+            margin: 6px;
+            width: 70px;
+        }
+
+        .file {
+            margin: 4px 138px 4px;
+
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg" style="background-color: blanchedalmond;">
+        <div class="container-fluid">
+            <img src="https://cdn.icon-icons.com/icons2/600/PNG/256/ecommerce-icons_icon-icons.com_55741.png"
+                alt="avatar logo" class="rounded-pill" style="width:40px; margin: 5px;">
+            <a class="navbar-brand" href="#">BW OLX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Contact Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Address</a></li>
+                            <li><a class="dropdown-item" href="#">Helpline</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Rate us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Subscriptions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="http://127.0.0.1:5500/BWproject/login.html"
+                                    target="_blank">Login</a>
+                            </li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:5500/signup.html" target="_blank">Sign
+                                    Up</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"
+                        style="background-color: rgb(255 255 210); ">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid pt-5 my-4 text-center">
+        <h1 id="formheading">Item Information Form</h1>
+    </div>
+    <div class="container p-2 my-1 text-center">
+        <p id="firstpara"> Please fill up the information of the item that you wish to sell below. Please verify the
+            information about your product beforehand.</p>
+    </div>
+    <div class="container text-center" id="formcontainer">
+        <div class="row justify-content-center">
+            <div class="col"></div>
+            <div class="col text-center">
+                <form action="/sellitems" class="sellform" name="myform" method="post">
+                    <legend>Fill the form mentioned below:</legend>
+                    <div>
+                        <label for="types">Type of Item:</label>
+                        <input list="types" name="ftype" placeholder="Enter type of item" required>
+                        <datalist id="types" class="boxes">
+                            <option value="Electronics"></option>
+                            <option value="Furniture"></option>
+                            <option value="Vehicles"></option>
+                            <option value="Fashion"></option>
+                            <option value="Decoratory items"></option>
+                        </datalist>
+                        
+                    </div>
+                    <div>
+                        <label for="model">Product:</label>
+                        <input type="text" name="fmodel" id="model" class="boxes"
+                        placeholder="Enter Product Name" required>
+                    </div>
+                    <div>
+                        <label for="address">Address/Block No:</label>
+                        <input type="text" name="fadd" id="address" class="boxes" pattern="[A-Z]-[0-9]+"
+                            placeholder="address format eg:- A-23" required>
+                    </div>
+                    <div>
+                        <label for="mobno">Mobile No:</label>
+                        <input type="text" name="fmobno" id="mobno" class="boxes" pattern="[0-9]{10}"
+                            placeholder="Eneter Your Mobile No." required>
+                    </div>
+                    <div>
+                        <label for="price">Expected Price:</label>
+                        <input type="text" name="fprice" id="price" class="boxes" pattern="[0-9]+.[0-9]{2}"
+                            placeholder=" price format eg:- 100.00" required>
+                    </div>
+                    <div>
+                        <p id="productpara">Is the product damaged?</p>
+                        <input type="radio" name="fno" id="yes" class="radio" value="1" required>
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="fno" id="no" class="radio" value="0">
+                        <label for="no">No</label>
+                    </div>
+                    <div>
+                        <p id="productpara">Is the price negotiable?</p>
+                        <input type="radio" name="fyes1" id="yes1" class="radio" value="1" required>
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="fyes1" id="no1" class="radio" value="0">
+                        <label for="no">No</label>
+                    </div>
+                    <div>
+                        <label for="img">Upload 4 images of your product:</label>
+                        <input type="file" name="fnewfile1" class="file" id="img" accept="images/*">
+                        <input type="file" name="fnewfile2" class="file" id="img" accept="images/*">
+                        <input type="file" name="fnewfile3" class="file" id="img" accept="images/*">
+                        <input type="file" name="fnewfile4" class="file" id="img" accept="images/*">
+                    </div>
+                    <input type="submit" value="Submit" id="submit" class="button">
+                    <input type="reset" value="Reset" id="reset" class="button">
+
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: blanchedalmond; font-size: 18px;">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="/home" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">© 2023 Birla White, Inc</p>
+        </footer>
+    </div>
+</body>
+
+</html>
